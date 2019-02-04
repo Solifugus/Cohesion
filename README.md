@@ -70,4 +70,32 @@ class myClass extends Condition {
 None.
 
 
+# Roadmap
+
+The concept is pretty simple and doesn't need more than the condition class, as it is.  However, I could build more validation to improve the quality of that class with better and more instructional error messages.  I am also thinking that more specific examples could be enlightening.
+
+One idea I am pondering is to build a simple programming language on top of this for a perfectly synchronous view of business logic, even as all operations behind the scenes are truly and fully asynchronous.  I would likely build this on top of MySQL, making heavy use of MySQL's JSON features (NoSQL amid SQL).
+
+I am aware of no business language being devised since COBOL.  This language would have the same overall goals but with a modernized architecture. 
+
+Again note that the following is currently just in the stage of thinking.
+
+## Architecture
+
+Software would comprise of services in a decentralized mesh.  Each service would be requested by another service, designating its input source, its control parameters, and its output destination.  In turn, this could instantiate an instance of that service controlled by the requesting service. 
+
+Also, each service would advertise what it offers and what it seeks, of other services.  Services offered may be contingent upon services sought.  Non-hosting services run within hosting services.  A hosting service runs on a computer operating system.  Non-hosting services each run in a container provided by the hosting service.  So I hosting service's job is to provide general network access, memory, and processing plus any addition resource options, such as a user interface (if available). 
+
+Services both offered and sought are advertised with a hosting service's "master service".  A master service controls routing of communication through the mesh, as well as the import/export of services between hosting services in the mesh.  
+
+## The Business Language
+
+The Condition approach will handle the asychrony efficiently as well as unexpected circumstanes.. 
+
+The I/O and control streams will transport JSON formatted data so the Business Language can percceive mixed tree and array structures of data.  It's operations being stateful will have control data, input data, and memory data to base a logical conditions on.  It will have memory data, and output data to write to, upon a truth condition.
+
+e.g.
+
+(control.operation = add, input.x is number, and input.y is number) => {output.result = input.x + input.y}
+
 
