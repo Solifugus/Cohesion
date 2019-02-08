@@ -1,46 +1,31 @@
 #!/usr/bin/env nodejs
 
-const {Condition} = require('./condition.js');
+const {Cohesion} = require('./cohesion.js');
 
-class Application extends Condition {
+class Application extends Cohesion {
 	constructor() {
 		super();
-		this.register(['state1','state2'], this.test1, this.action1);
-		this.register(['state2','state3'], this.test2, this.action2);
+		this.setReaction( 'dostuff1', this.test1, this.action1 );
+		this.setTrigger(['state1','state2'], 'dostuff1');
 	}
 
 	run() {
-		this.value('state1',true);
-		this.value('state2',true);
+		this.trigger('state1',true);
+		this.trigger('state2',true);
 	}
 
 	test1() {
-		console.log('Running Test #1..');
-		if( this.value('state1') === true && this.value('state2') === true ) return true; else return false;
+		let result = true;
+		console.log('Test1 Result: ' + result);
+		return result;
 	}
 
 	action1() {
-		console.log('Running Action #1..');
-		console.log('Condition 1 was true so setting up that condition 2 will also be true.');
-		this.value('state3',true);
-	}
-
-	test2() {
-		console.log('Running Test #2..');
-		if( this.value('state2') === true && this.value('state3') === true ) return true; else return false;
-	}
-
-	action2() {
-		console.log('Running Action #2..');
-		console.log('Condition 2 was true so changing all states to false.');
-		this.value('state1',false);
-		this.value('state2',false);
-		this.value('state3',false);
+		console.log('Performing Action1..');
 	}
 }
 
 let application = new Application();
 application.run();
-
 
 
