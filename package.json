@@ -1,0 +1,22 @@
+{
+  "name": "cohesion",
+  "version": "1.0.0",
+  "description": "Class for robust programming, including easy resynchronization of asynchronous calls.",
+  "main": "application.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Solifugus/Cohesion.git"
+  },
+  "keywords": [
+    "async"
+  ],
+  "author": "Matthew C. Tedder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Solifugus/Cohesion/issues"
+  },
+  "homepage": "https://github.com/Solifugus/Cohesion#readme"
+}

@@ -1,5 +1,6 @@
 
 // Cohesion
+// LICENSE: MIT (See included LICENSE file)
 // Purpose: to resynchronize multiple asynchronous calls and/or setup statefully designed processes
 
 class Cohesion {
